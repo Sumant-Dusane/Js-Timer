@@ -21,7 +21,10 @@ const addLoaderDOM = () => {
 
 const addLoader = () => {
     const currentLoader = loaders.shift();
-    if (!currentLoader) return
+    if (!currentLoader) {
+        isFirst = true;
+        return
+    }
     const currentChildLoader = currentLoader.querySelector('.child');
 
     main.append(currentLoader);
